@@ -1,6 +1,6 @@
 var memoryApp = memoryApp || {}
 
-var Card = memoryApp.card = function Card(face){
+var Card = memoryApp.card = function Card(){
   this.hidden = true,
-  this.face = "images/guy" + face + "png"
+  this.face = "images/cardback.jpg"
 }

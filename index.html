@@ -1,15 +1,20 @@
 <html ng-app='memoryApp'>
   <head>
     <title>Memory Game</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" href="styles/card.css">
+
     <script src="src/js/angular.min.js"></script>
     <script src="src/js/controllers.js"></script>
     <script src="src/js/card.js"></script>
   </head>
   <body ng-controller='CardsCtrl'>
-    <ul>
-      <li ng-repeat='card in cards'>
-        {{card.hidden}}
-      </li>
-    </ul>
+    <div class='container'>
+      <div ng-repeat='card in cards' class='card'>
+        <img ng-src='{{card.face}}' class='front'>
+        <img src='images/front.jpg' class='back'>
+      </div>
+
+    </div>
   </body>
 </html>
