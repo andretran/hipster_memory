@@ -5,14 +5,19 @@
     <link rel="stylesheet" type="text/css" href="styles/card.css">
 
     <script src="src/js/angular.min.js"></script>
+    <script src="src/js/jquery-1.11.1.min.js"></script>
+    <script src="src/js/jquery-ui.min.js"></script>
+    <script src="src/js/jquery.flip.min.js"></script>
+    <script src='src/js/underscore-min.js'></script>
     <script src="src/js/controllers.js"></script>
     <script src="src/js/card.js"></script>
+    <script src="src/js/main.js"></script>
   </head>
   <body ng-controller='CardsCtrl'>
     <div class='container'>
       <div ng-repeat='card in cards' class='card'>
         <img ng-src='{{card.face}}' class='front'>
-        <img src='images/front.jpg' class='back'>
+        <!-- <img src='images/front.jpg' class='back'> -->
       </div>
 
     </div>
