@@ -1,0 +1,15 @@
+<html ng-app='memoryApp'>
+  <head>
+    <title>Memory Game</title>
+    <script src="src/js/angular.min.js"></script>
+    <script src="src/js/controllers.js"></script>
+    <script src="src/js/card.js"></script>
+  </head>
+  <body ng-controller='CardsCtrl'>
+    <ul>
+      <li ng-repeat='card in cards'>
+        {{card.hidden}}
+      </li>
+    </ul>
+  </body>
+</html>
