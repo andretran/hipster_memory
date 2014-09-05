@@ -15,10 +15,11 @@
   </head>
   <body ng-app='memoryApp'>
     <div class='container' ng-controller='CardsCtrl'>
-
-      <div ng-repeat='card in cards' ng-click='card.flipCard()'
-          ng-class="{'card' : !card.flipped && !card.position, 'card flipped': card.flipped,
-          'card left': card.position == 'left', 'card right': card.position == 'right'}">
+      <div class='win' ng-show='won'>
+        <img ng-src='images/win.gif'>
+      </div>
+      <div ng-show='!won' ng-repeat='card in cards' ng-click='card.flipped || changeState(card)'
+          ng-class="{'card' : !card.flipped, 'card flipped': card.flipped}">
         <img ng-src='{{card.back}}' class='back side'>
         <div class='face side'>
           <img ng-src='{{card.logo}}' class='logo'>

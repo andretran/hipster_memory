@@ -7,7 +7,7 @@ var Card = memoryApp.card = function Card(logo_id){
   this.position = null;
 }
 
-Card.prototype.flipCard = function(){
+Card.prototype.flip = function(){
   this.flipped = !this.flipped;
 }
 
@@ -20,4 +20,8 @@ Card.prototype.oscillate = function(){
     this.position = 'left';
   }
   console.log('working');
+}
+
+Card.prototype.compare = function(card){
+  return (this.logo === card.logo) ? true : false;
 }
