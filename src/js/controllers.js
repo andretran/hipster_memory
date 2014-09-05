@@ -1,7 +1,7 @@
 var memoryApp = angular.module('memoryApp', []);
 
 memoryApp.controller('CardsCtrl', function ($scope, $timeout){
-  var won = $scope.won = false;
+  $scope.won = false;
   var cards = $scope.cards = [];
   var current_cards = [];
   var checkingCards = $scope.checkingCards = false;
@@ -18,17 +18,15 @@ memoryApp.controller('CardsCtrl', function ($scope, $timeout){
 
 
   $scope.changeState = function (card) {
-    won = !won;
-    console.log(won);
-    // if (checkingCards){
-    //   return;
-    // }
-    // card.flip();
-    // current_cards.push(card);
-    // if (current_cards.length === 2){
-    //   checkingCards = true;
-    //   $timeout(compareCards, 1500);
-    // }
+    if (checkingCards){
+      return;
+    }
+    card.flip();
+    current_cards.push(card);
+    if (current_cards.length === 2){
+      checkingCards = true;
+      $timeout(compareCards, 1500);
+    }
   }
 
   function compareCards(){
@@ -38,7 +36,7 @@ memoryApp.controller('CardsCtrl', function ($scope, $timeout){
       }
 
       if (checkWon()){
-        won = true;
+        $scope.won = true;
       }
       current_cards = [];
       checkingCards = false;
