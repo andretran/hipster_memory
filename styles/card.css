@@ -43,8 +43,8 @@
   transform: rotateY( -180deg );
 }
 
-.card .left {
-  transform: rotateY( 30deg );
+.left{
+  transform: rotateY( 100deg );
 }
 
 .card .right {

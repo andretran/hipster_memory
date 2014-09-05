@@ -19,7 +19,6 @@ Card.prototype.oscillate = function(){
   }else{
     this.position = 'left';
   }
-  console.log('working');
 }
 
 Card.prototype.compare = function(card){
